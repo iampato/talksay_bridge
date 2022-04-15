@@ -1,6 +1,6 @@
 {
   "name": "talksay_bridge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Two test React components",
   "author": "Jawblia",
@@ -9,8 +9,8 @@
     "components",
     "ui"
   ],
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/App.js",
+  "module": "dist/App.js",
   "files": [
     "dist",
     "README.md"

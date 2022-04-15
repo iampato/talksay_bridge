@@ -26,24 +26,3 @@ export function useMethodHandlerHook() {
 //   )
 // };
 
-function FlutterWrapperApp({ children }) {
-  return (
-    <>
-      {
-        navigator.userAgent.includes("MiniApp") ?
-          <>
-            {/* this is a flutter app */}
-            {/* <Bla/> */}
-            {children}
-
-          </> :
-          <>
-            {/* this is a web app */}
-            {children}
-          </>
-      }
-    </>
-  );
-}
-
-export default FlutterWrapperApp;
