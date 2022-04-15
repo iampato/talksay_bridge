@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Talksay native <> webview bridge 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+npm package to do a two communication with js to mobile native stuff
 
 ## Available Scripts
 

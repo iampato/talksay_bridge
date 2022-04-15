@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
 
-function App() {
+export function useMethodHandlerHook() {
+  function handleMethod(methodName, args) {
+    if (methodName && args) {
+      try {
+        let results = [
+          methodName, args
+        ];
+        window.flutter_inappwebview.callHandler('methodHandler', ...results);
+      } catch (e) {
+        console.log("Error: ", e);
+      }
+    }
+  }
+  return { handleMethod };
+};
+
+// const Bla = () => {
+//   const { handleMethod } = useMethodHandlerHook();
+
+//   return (
+//     <>
+//       <button onClick={() => handleMethod('test', { "name": "hey" })}>TEST</button>
+//     </>
+//   )
+// };
+
+function FlutterWrapperApp({ children }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {
+        navigator.userAgent.includes("MiniApp") ?
+          <>
+            {/* this is a flutter app */}
+            {/* <Bla/> */}
+            {children}
+
+          </> :
+          <>
+            {/* this is a web app */}
+            {children}
+          </>
+      }
+    </>
   );
 }
 
-export default App;
+export default FlutterWrapperApp;
