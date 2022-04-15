@@ -3,12 +3,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
 exports.useMethodHandlerHook = useMethodHandlerHook;
 
 require("core-js/modules/web.dom-collections.iterator.js");
-
-require("core-js/modules/es.string.includes.js");
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -41,13 +38,3 @@ function useMethodHandlerHook() {
 //     </>
 //   )
 // };
-
-function FlutterWrapperApp(_ref) {
-  let {
-    children
-  } = _ref;
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, navigator.userAgent.includes("MiniApp") ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, children) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, children));
-}
-
-var _default = FlutterWrapperApp;
-exports.default = _default;
